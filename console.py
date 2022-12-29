@@ -11,6 +11,7 @@ help    :   Show this help
 get     :   Get the required data from the database
 update  :   Update the required data in the database
 server  :   Start/stop the server
+exit    :   Stop everything
 """
 """
 get/update:
@@ -56,6 +57,8 @@ def _console_():
                             tlog('console info', f'successfully updated the webhook to {inp[2]}')
                 else:
                     tlog('console error', 'Invalid syntax')
+            elif inp[0] == 'exit':
+                raise KeyboardInterrupt('User intentionally exited')
             else:
                 tlog('console error', 'Unkwown command')
                 
