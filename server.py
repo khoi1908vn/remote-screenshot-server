@@ -17,6 +17,9 @@ SERVER SOURCE
 from flask import Flask, request
 import json, logging, requests
 from database import getstatus as gs, getwebhook as gwh, updatestatus as us, updatewebhook as uwh
+from tlog import tlog
+import time
+from multiprocessing import Process
 
 with open('./databases/config.json', 'r') as f:
     config = json.load(f)
@@ -73,4 +76,24 @@ def webhook_update(newwebhook):
         uwh(newwebhook)
         return 'success'
 def _server_():
-  app.run(host='0.0.0.0',port=8080)
+    app.run(host='0.0.0.0',port=8080)
+
+t1 = Process(target=_server_, daemon=True)
+def start_server():
+    if not t1.is_alive():
+        tlog('server init', 'Server starting...')
+        els = time.time()
+        t1.start()
+        el = str(round(time.time() - els, 3))
+        tlog('server init', f'Server started in {el}s')
+    else:
+        tlog('server init', f'Server already started!')
+def stop_server():
+    if t1.is_alive():
+        tlog('server init', 'Server stopping...')
+        els = time.time()
+        t1.terminate()
+        el = str(round(time.time() - els, 3))
+        tlog('server init', f'Server stopped in {el}s')
+    else:
+        tlog('server init', f'Server already stopped!')

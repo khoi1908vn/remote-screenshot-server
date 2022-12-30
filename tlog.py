@@ -7,7 +7,7 @@ khoi1908vn#0100
 import datetime, pytz
 def tlog(tags, phr):
     logtime = datetime.datetime.now(pytz.timezone("Asia/Bangkok")).strftime("%d-%m-%Y %H:%M:%S")
-    if tags == None:
+    if tags == '':
         print(f'[{logtime}] ' + phr)
     else:
         tags = tags.split()
