@@ -52,6 +52,24 @@ def get():
     }
     return return_dict, status_code
 
+@app.get('/check/is_remote_screenshot_server/')
+def check1():
+    return 'yes'
+
+@app.get('/check/key/clientKey/')
+def check2():
+    if request.headers.get('clientKey') == _client:
+        return 'yes'
+    else:
+        return 'no'
+
+@app.get('/check/key/userKey/')
+def check3():
+    if request.headers.get('userKey') == _user:
+        return 'yes'
+    else:
+        return 'no'
+
 def user_check(_userKey):
     global _client
     if _userKey == None:
