@@ -5,7 +5,7 @@ khoi1908vn#0100
 """
 from tlog import tlog
 from database import *
-from server import start_server, stop_server
+from server import stop_server
 import time
 import requests
 helpcommand = """Commands:
