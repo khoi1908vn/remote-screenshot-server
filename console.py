@@ -58,7 +58,12 @@ def _console_():
                             else:
                                 updatewebhook(inp[2])
                                 tlog('console info', f'successfully updated the webhook to {inp[2]}')
-                    else:
+                        elif inp[1] == 'clientKey':
+                            updateclient(inp[2])
+                            tlog('console info', f'successfully updated the clientKey to {inp[2]}')
+                        elif inp[1] == 'clientKey':
+                            updateuser(inp[2])
+                            tlog('console info', f'successfully updated the userKey to {inp[2]}')
                         tlog('console error', 'Invalid syntax')
                 elif inp[0] == 'exit':
                     raise KeyboardInterrupt('User intentionally exited')
