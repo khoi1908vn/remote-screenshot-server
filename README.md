@@ -55,7 +55,7 @@ This is an example of how you may provide instructions for launching your projec
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-There are 2 main feature, `update` and `get`.
+There are 2 main features, `update` and `get`.
 
 - `update` : Update the current `webhook` and `status` that the agent will get via `/get/`
 
