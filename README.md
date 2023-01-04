@@ -25,7 +25,7 @@ This is the server used in a remote-screenshot project. With a console and a sim
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may provide instructions for launching your project locally. Follow these simple example steps to set up a local copy.
+This is how you will deploy this server into your own platforms.
 
 ### Installation
 *Replit recommended*
