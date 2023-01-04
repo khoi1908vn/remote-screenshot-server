@@ -11,5 +11,5 @@ def start_console():
 
 if __name__ == '__main__':
     start_server()
-    time.sleep(0.5)
+    time.sleep(1)
     start_console()
