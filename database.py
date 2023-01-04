@@ -26,3 +26,15 @@ def updatewebhook(nwh):
     db['webhook'] = nwh
     with open('./databases/db.json','w') as f:
         json.dump(db, f)
+def updateclient(nc):
+    with open('./databases/config.json', 'r') as f:
+        config = json.load(f)
+    config['clientKey'] = nc
+    with open('./databases/config.json', 'r') as f:
+        json.dump(config, f)
+def updateuser(nc):
+    with open('./databases/config.json', 'r') as f:
+        config = json.load(f)
+    config['userKey'] = nc
+    with open('./databases/config.json', 'r') as f:
+        json.dump(config, f)
