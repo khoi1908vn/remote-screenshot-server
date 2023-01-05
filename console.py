@@ -51,7 +51,8 @@ def _console_():
                                 updatestatus(inp[2])
                                 tlog('console info', f'successfully updated the status to {inp[2]}')
                         elif inp[1] == 'webhook':
-                            if 'https://discordapp.com/api/webhooks/' not in inp[2]:
+                            if not all(i in inp[2] for i in ['discord', 'https://', '/api/webhooks/']):
+                            # if 'https://discordapp.com/api/webhooks/' not in inp[2]:
                                 tlog('console error', 'Invalid syntax')
                             elif requests.get(inp[2]).status_code != 200:
                                 tlog('console error', 'Invalid webhook')
